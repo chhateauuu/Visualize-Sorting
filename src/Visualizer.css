@@ -1,0 +1,117 @@
+.array-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center; 
+    position: absolute;
+    margin: 0px 10px 0px 0px; 
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.array-bar {
+    width: 5px;
+    background-color: rgb(243, 104, 104);
+    margin: 0 1px; 
+}
+
+.bars-container {
+    display: flex;
+    justify-content: center; 
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: center; 
+}
+
+
+
+button, #sortingMethodDropdown {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    outline: none;
+}
+
+button {
+    background-color: rgb(112, 128, 144); 
+    color: white; 
+}
+
+button:hover {
+    background-color: rgb(90, 104, 118); 
+    transform: scale(1.05); 
+}
+
+button:active {
+    transform: scale(0.95); 
+}
+
+#sortingMethodDropdown {
+    background-color: white;
+    color: rgb(53, 53, 130); 
+    border: 1px solid rgb(112, 128, 144);
+}
+
+#sortingMethodDropdown option {
+    color: black; 
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 75%;
+    max-height: 90vh; 
+    overflow-y: auto; 
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) { 
+    .modal-content {
+        width: 90%; 
+        padding: 10px;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 2000px) { 
+    .modal-content {
+        max-width: 1200px; 
+        padding: 30px; 
+    }
+
+    button, #sortingMethodDropdown {
+        padding: 15px 30px; 
+        font-size: 24px; 
+    }
+}

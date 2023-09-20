@@ -11,7 +11,14 @@ function isSorted(array) {
 
 export const mergeSortAnimations = array => {
     const animations = [];
-    if (array.length <= 1 || isSorted(array)) return animations;
+    if (array.length <= 1) return animations;
+    if (isSorted(array)) {
+        for (let i = 0; i < array.length; i++) {
+            animations.push([i, i, true]);
+            animations.push([i, i, true]);
+        }
+        return animations;
+    }
     const auxiliaryArray = array.slice();
     mergeSortHelper(array, 0, array.length - 1, auxiliaryArray, animations);
     return animations;
@@ -92,8 +99,14 @@ function partition(array, startIdx, endIdx, animations) {
 
 export const heapSortAnimations = array => {
     const animations = [];
-    if (array.length <= 1 || isSorted(array)) return animations;
-
+    if (array.length <= 1) return animations;
+    if (isSorted(array)) {
+        for (let i = 0; i < array.length; i++) {
+            animations.push([i, i, true]);
+            animations.push([i, i, true]);
+        }
+        return animations;
+    }
     let length = array.length;
 
     for (let i = Math.floor(length / 2) - 1; i >= 0; i--) {
@@ -141,8 +154,14 @@ function heapify(array, length, i, animations) {
 export const bubbleSortAnimations = array => {
     const animations = [];
     let n = array.length;
-    if (array.length <= 1 || isSorted(array)) return animations;
-
+    if (array.length <= 1) return animations;
+    if (isSorted(array)) {
+        for (let i = 0; i < array.length; i++) {
+            animations.push([i, i, true]);
+            animations.push([i, i, true]);
+        }
+        return animations;
+    }
     for (let i = 0; i < n-1; i++) {
         for (let j = 0; j < n-i-1; j++) {
             animations.push([j, j+1, true]); 
